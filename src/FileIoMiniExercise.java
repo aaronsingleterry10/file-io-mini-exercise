@@ -13,7 +13,7 @@ public class FileIoMiniExercise {
 
         // TODO: uncomment the following variable declarations
         List<Instructor> instructors;
-        List<String> names = new ArrayList<>();
+        List<String> names;
 
         // TODO: read the contents of the instructor-names.txt file and store the list of strings into the 'names' variable
         names = Files.readAllLines(instructorNames);
