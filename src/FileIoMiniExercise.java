@@ -22,10 +22,10 @@ public class FileIoMiniExercise {
         instructors = Instructor.nameStringsToInstructors(names);
 
         // TODO: greet all instructors by their names
-        for(Instructor instructor : instructors) {
-            System.out.println("Hello, " + instructor.getName() + "!");
-        }
-
+//        for(Instructor instructor : instructors) {
+//            System.out.println("Hello, " + instructor.getName() + "!");
+//        }
+        greetInstructors(instructors);
         // TODO: change "Fred" to "David" in the list of Instructor objects
         List<Instructor> newInstructors = new ArrayList<>();
         for(Instructor instructor : instructors) {
@@ -40,12 +40,12 @@ public class FileIoMiniExercise {
         System.out.println(names);
 
         // TODO: overwrite the instructors-names.txt file with the latest list of names
-
+        Files.write(instructorNames, names);
         // TODO: uncomment the following line
-//        System.out.println("============== after name change...");
+        System.out.println("============== after name change...");
 
         // TODO: greet instructors again (no need to reread the text file again; just use the existing list of instructors in memory)
-
+        greetInstructors(newInstructors);
 
     }
 
