@@ -6,23 +6,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileIoMiniExercise {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         // TODO: define the path to the instructor-names.txt file
-
+        Path instructorNames = Paths.get("src", "instructor-names.txt");
 
         // TODO: uncomment the following variable declarations
-//        List<Instructor> instructors;
-//        List<String> names = new ArrayList<>();
+        List<Instructor> instructors;
+        List<String> names = new ArrayList<>();
 
         // TODO: read the contents of the instructor-names.txt file and store the list of strings into the 'names' variable
-
-
+        names = Files.readAllLines(instructorNames);
+        System.out.println(names);
         // TODO: assign the 'instructors' variable a list of Instructor objects with names matching the list of strings/names from the text file (the Instructor class has a helpful method for this)
-
+        instructors = Instructor.nameStringsToInstructors(names);
 
         // TODO: greet all instructors by their names
-
+        for(Instructor instructor : instructors) {
+            System.out.println("Hello, " + instructor.getName() + "!");
+        }
 
         // TODO: change "Fred" to "David" in the list of Instructor objects
 
